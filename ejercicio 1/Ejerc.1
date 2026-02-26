@@ -1,0 +1,32 @@
+namespace ejercicio_1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnMostral_Click(object sender, EventArgs e)
+        { }
+            private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            IstTabla.Items.Clear(); // Limpia la lista
+
+            int numero;
+
+            if (int.TryParse(txtNumero.Text, out numero))
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    IstTabla.Items.Add(numero + " x " + i + " = " + (numero * i));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un número válido");
+            }
+        }
+    }
+    }
+
